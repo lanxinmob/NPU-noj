@@ -1,10 +1,11 @@
+//完美矩阵
 #include<stdio.h>
 
 int arr[300][300]={0};
 
 int isPerfect(int a,int b,int c,int d)
 {   
-    int flag = 1,n,m;
+    int flag = 1,n=0,m=0;
     for (size_t i = a; i <= c; i++)
     {
          if(arr[i][b]!=1||arr[i][d]!=1)flag = 0;
@@ -34,13 +35,12 @@ int main()
         for (size_t j = 0; j < m; j++)
         {
              scanf("%d",&arr[i][j]); 
-             if (arr[i][j]==0) arr[i][j]=-1; 
         }
     }
     
     for (size_t upedge = 0; upedge < n; upedge++){
         for (size_t leftedge = 0; leftedge < m; leftedge++){
-            for (size_t width = 1; ( width+upedge < n)&&( width+leftedge<m)&&width+upedge==width+leftedge; width++){
+            for (size_t width = 1; ( width+upedge < n)&&( width+leftedge<m); width++){
                  result+=isPerfect(upedge,leftedge,upedge+width,leftedge+width);
        }
       }  

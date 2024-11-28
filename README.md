@@ -1,3 +1,3 @@
 # NPU-noj
 just a record,not complete
-and some algorithm learni in the progress 
+and some algorithm learning in the progress 

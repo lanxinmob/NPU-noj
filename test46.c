@@ -4,7 +4,7 @@
 
 int arr[300][300]={0};
 int preFixsum[300][300]={0};
-//计算前缀
+//计算前缀和
 void computepreFixsum(int n,int m)
 {
     for (int i = 0; i < n; i++)
@@ -16,6 +16,7 @@ void computepreFixsum(int n,int m)
         }
     }
 }
+//获取矩阵中1的数量
 int getones(int a,int b, int c,int d)
 {
      return preFixsum[c][d] - (a>0?preFixsum[a-1][d]:0) - (b>0?preFixsum[c][b-1]:0)

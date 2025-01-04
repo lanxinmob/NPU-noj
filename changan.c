@@ -2,8 +2,20 @@
 #include<stdio.h>
 
 int path(int m,int n)
-{   
-    int dp[m][n];
+{   //对空间优化
+    int dp[m];
+    for (int i = 0; i < m; i++)
+    {
+        dp[i] = 1;
+    }
+    for (int j = 1; j < n; j++)
+    {for(int i = 1; i < m; i++)
+    {
+        dp[i] += dp[i-1]; 
+    }
+    }
+    return dp[m-1];
+    /*int dp[m][n];
     for(int i=0;i<m;i++){
         dp[i][0] = 1;
     }
@@ -19,6 +31,7 @@ int path(int m,int n)
         }
     }
     return dp[m-1][n-1];
+    */
 }
 int main()
 {
